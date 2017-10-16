@@ -46,5 +46,46 @@ namespace QuanLyKho
 
         }
 
+        private void btn_xuat_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(constr);
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "ThongKeXuat";
+            com.CommandType = CommandType.StoredProcedure;
+            com.Connection = cn;
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                dgv_thongke.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Data is empty!");
+            }
+            con.DongKetNoi();
+        }
+        private void btn_xuat_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(constr);
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "ThongKeXuat";
+            com.CommandType = CommandType.StoredProcedure;
+            com.Connection = cn;
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                dgv_thongke.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Data is empty!");
+            }
+            con.DongKetNoi();
+        }
+
     }
 }

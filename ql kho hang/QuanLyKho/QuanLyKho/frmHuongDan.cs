@@ -14,6 +14,7 @@ namespace QuanLyKho
     {
 
 
+
         public frmHuongDan()
         {
             InitializeComponent();

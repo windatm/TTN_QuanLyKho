@@ -45,6 +45,31 @@ namespace QuanLyKho
             else MessageBox.Show("Có lỗi, không còn hàng");
             conn.DongKetNoi();
         }
+        private void dgv_Xuat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void btn_Thongtin_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(str);
+            SqlCommand com = new SqlCommand();
+            com.CommandText = "LoadHangHoa";
+            com.CommandType = CommandType.StoredProcedure;
+            com.Connection = cn;
+            SqlDataAdapter adap = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                dgv_Xuat.DataSource = dt;
+                MessageBox.Show("Load data success!");
+            }
+            else
+            {
+                MessageBox.Show("Data is Empty!");
+            }
+            conn.DongKetNoi();
+        }
     }
 }

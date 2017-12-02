@@ -13,7 +13,7 @@ namespace QuanLyKho
     public class ConnectData
     {
         public SqlConnection conn = new SqlConnection();
-        public string constr = @"Data Source=DESKTOP-587EKUR\SQLEXPRESS;Initial Catalog=QuanLyKho;Integrated Security=True";
+        public string constr = @"Data Source=.;Initial Catalog=QuanLyKho;Integrated Security=True";
 
         public void MoKetNoi()
         {
